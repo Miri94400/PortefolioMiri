@@ -8,15 +8,35 @@
 .role-card,
 .env-card,
 .entreprise-grid>div {
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    /* Lighter border */
-    background: linear-gradient(145deg, #1e293b, #162030);
-    /* Gradient background */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: #ffffff;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    /* Bouncy transition */
     position: relative;
     overflow: hidden;
+    color: var(--text-primary);
+}
+
+/* Ensure headings inside these cards match the light context */
+.project-card h3, .project-card h4,
+.bts-card h3, .bts-card h4,
+.option-card h3, .option-card h4,
+.job-card h3, .job-card h4,
+.role-card h3, .role-card h4,
+.env-card h3, .env-card h4,
+.entreprise-grid>div h3, .entreprise-grid>div h4 {
+    color: var(--text-primary);
+}
+
+/* Ensure text and lists inside these cards are a readable slate gray */
+.project-card p, .project-card ul, .project-card li,
+.bts-card p, .bts-card ul, .bts-card li,
+.option-card p, .option-card ul, .option-card li,
+.job-card p, .job-card ul, .job-card li,
+.role-card p, .role-card ul, .role-card li,
+.env-card p, .env-card ul, .env-card li,
+.entreprise-grid>div p, .entreprise-grid>div ul, .entreprise-grid>div li {
+    color: var(--text-secondary);
 }
 
 .project-card:hover,
@@ -51,8 +71,9 @@
 .subsection-title {
     font-size: 1.8rem;
     margin: 40px 0 20px;
-    background: linear-gradient(to right, var(--accent-color), #fff);
+    background: linear-gradient(to right, var(--accent-color), var(--text-primary));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
     border-bottom: 2px solid rgba(56, 189, 248, 0.3);
@@ -128,7 +149,7 @@
 
 /* Icon Pulse on Hover */
 .project-card:hover .project-header h4 {
-    color: #fff;
+    color: var(--accent-color);
 }
 
 .project-card:hover i {
