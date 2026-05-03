@@ -169,3 +169,121 @@
         transform: scale(1);
     }
 }
+
+/* E5 Ajay-Style Project Cards */
+.e5-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.e5-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.e5-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: var(--accent-color);
+}
+
+.e5-card-cover {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    background: linear-gradient(135deg, #1F4E79, #0ea5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.e5-card-cover i {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.e5-card-cover.quick-cover {
+    background: #ffffff;
+    padding: 20px;
+}
+
+.e5-card-cover.quick-cover img {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.e5-card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.e5-card-title {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.e5-card-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    flex: 1;
+}
+
+.e5-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.e5-tag {
+    background: rgba(31, 78, 121, 0.1);
+    color: #1F4E79;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.e5-card-action {
+    margin-top: auto;
+}
+
+.btn-e5-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #1F4E79;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-e5-link:hover {
+    background-color: #0ea5e9;
+    color: white;
+    transform: translateY(-2px);
+}
