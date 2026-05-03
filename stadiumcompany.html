@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StadiumCompany | The Stadium - Paris</title>
+    <meta name="description" content="Site officiel de StadiumCompany. Découvrez The Stadium, le grand stade sportif et culturel de Paris d'une capacité de 50 000 places.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #1F4E79;
+            --primary-gold: #FFB900;
+            --light-bg: #f8f9fa;
+            --dark-bg: #121212;
+            --text-main: #333333;
+            --text-light: #ffffff;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--text-main);
+            background-color: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(31, 78, 121, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-gold);
+        }
+
+        .btn-ticket {
+            background-color: #d90429; /* Prominent red */
+            color: white !important;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.4);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-ticket::after {
+            display: none;
+        }
+
+        .btn-ticket:hover {
+            background-color: #ef233c;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(217, 4, 41, 0.6);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(31, 78, 121, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1459865264687-595d652de67e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 20px;
+            color: var(--text-light);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 60px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-gold);
+        }
+
+        .hero-content p {
+            font-size: 22px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-inline: auto;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 36px;
+            color: var(--primary-gold);
+            font-weight: 700;
+        }
+
+        .stat-item p {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+        /* Sections General */
+        section {
+            padding: 100px 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 40px;
+            color: var(--primary-blue);
+            margin-bottom: 60px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-gold);
+            border-radius: 2px;
+        }
+
+        /* Billetterie & Events */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        .event-card.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .event-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .event-info {
+            padding: 25px;
+        }
+
+        .event-date {
+            color: var(--primary-gold);
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .event-title {
+            font-size: 22px;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .event-desc {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .btn-gold {
+            display: inline-block;
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-gold:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        /* Restauration & VIP */
+        .split-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .split-section:nth-child(even) {
+            flex-direction: row-reverse;
+            margin-top: 100px;
+        }
+
+        .split-content {
+            flex: 1;
+            transform: translateX(-50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+        
+        .split-section:nth-child(even) .split-content {
+            transform: translateX(50px);
+        }
+
+        .split-content.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .split-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateX(50px);
+            opacity: 0;
+            transition: all 0.8s ease;
+        }
+
+        .split-section:nth-child(even) .split-image {
+            transform: translateX(-50px);
+        }
+
+        .split-image.visible {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .split-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .split-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .split-content h3 {
+            font-size: 32px;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .split-content p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+        }
+
+        .feature-list i {
+            color: var(--primary-gold);
+            font-size: 18px;
+        }
+
+        /* Gallery */
+        .gallery {
+            background: var(--primary-blue);
+            color: white;
+        }
+
+        .gallery .section-title {
+            color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(31, 78, 121, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            font-size: 30px;
+            color: var(--primary-gold);
+        }
+
+        /* Contact */
+        .contact-container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 50px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .contact-info {
+            flex: 1;
+            background: var(--primary-blue);
+            color: white;
+            padding: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary-gold);
+        }
+
+        .contact-info p {
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-item i {
+            font-size: 20px;
+            color: var(--primary-gold);
+        }
+
+        .contact-form {
+            flex: 1.5;
+            padding: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: var(--transition);
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(31, 78, 121, 0.1);
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+        }
+
+        /* Footer */
+        footer {
+            background: #0a192f;
+            color: white;
+            padding: 50px 50px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        .footer-logo span {
+            color: var(--primary-gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary-gold);
+            color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 40px; }
+            .split-section, .split-section:nth-child(even) {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .contact-container {
+                flex-direction: column;
+            }
+            .split-content, .split-image {
+                transform: translateY(30px) !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 15px 20px; }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--primary-blue);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition);
+            }
+            .nav-links.active { left: 0; }
+            .mobile-menu-btn { display: block; }
+            section { padding: 60px 20px; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .events-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <a href="#" class="logo"><i class="fas fa-shield-halved"></i> SC<span>.</span></a>
+        <div class="mobile-menu-btn" id="mobile-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#accueil" class="active">Accueil</a></li>
+            <li><a href="#evenements">Événements</a></li>
+            <li><a href="#restauration">Restauration</a></li>
+            <li><a href="#vip">VIP & Presse</a></li>
+            <li><a href="#galerie">Galerie</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#evenements" class="btn-ticket"><i class="fas fa-ticket-alt"></i> Acheter des billets</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero">
+        <div class="hero-content">
+            <h1>Bienvenue à <span>The Stadium</span></h1>
+            <p>Vivez l'émotion grandeur nature. Le temple parisien du sport, de la musique et des événements d'exception.</p>
+            <a href="#evenements" class="btn-ticket" style="display: inline-flex; background: var(--primary-gold); color: var(--primary-blue) !important; margin-top: 20px;">Découvrir le programme</a>
+            
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3 id="counter-capacity">0</h3>
+                    <p>Places</p>
+                </div>
+                <div class="stat-item">
+                    <h3 id="counter-events">0</h3>
+                    <p>Événements à venir</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1</h3>
+                    <p>Lieu Unique (Paris)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Événements & Billetterie -->
+    <section id="evenements">
+        <h2 class="section-title">Billetterie & Événements</h2>
+        <div class="events-grid">
+            <!-- Event 1 -->
+            <div class="event-card animate-on-scroll">
+                <img src="https://images.unsplash.com/photo-1518605368461-1e1e38ce8ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Match de Football" class="event-img">
+                <div class="event-info">
+                    <span class="event-date"><i class="far fa-calendar-alt"></i> 15 Juin 2026 - 21h00</span>
+                    <h3 class="event-title">Finale Cup Internationale</h3>
+                    <p class="event-desc">Assistez au choc de l'année opposant les deux meilleures équipes européennes dans une ambiance électrique.</p>
+                    <a href="#evenements" class="btn-gold">Réserver</a>
+                </div>
+            </div>
+            <!-- Event 2 -->
+            <div class="event-card animate-on-scroll" style="transition-delay: 0.2s">
+                <img src="https://images.unsplash.com/photo-1540039155732-d674d40bf40f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Concert" class="event-img">
+                <div class="event-info">
+                    <span class="event-date"><i class="far fa-calendar-alt"></i> 22 Juillet 2026 - 20h30</span>
+                    <h3 class="event-title">Global Pop Tour 2026</h3>
+                    <p class="event-desc">Le show monumental de la star internationale avec une scénographie 360° exclusive à The Stadium.</p>
+                    <a href="#evenements" class="btn-gold">Réserver</a>
+                </div>
+            </div>
+            <!-- Event 3 -->
+            <div class="event-card animate-on-scroll" style="transition-delay: 0.4s">
+                <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Événement Corporate" class="event-img">
+                <div class="event-info">
+                    <span class="event-date"><i class="far fa-calendar-alt"></i> 05 Septembre 2026</span>
+                    <h3 class="event-title">Tech Summit Paris</h3>
+                    <p class="event-desc">Le plus grand rassemblement de l'innovation et des technologies s'invite au sein de nos espaces.</p>
+                    <a href="#contact" class="btn-gold">Pass Pro</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Restauration & Services -->
+    <section id="restauration" style="background: white;">
+        <div class="split-section">
+            <div class="split-content animate-split">
+                <h3>Gastronomie & Concessions</h3>
+                <p>L'expérience The Stadium se vit aussi dans l'assiette. Découvrez notre restaurant panoramique "L'Étoile du Stade" dirigé par un chef étoilé, offrant une vue imprenable sur la pelouse.</p>
+                <p>Pour des envies sur le pouce, nos 45 points de restauration (food courts) répartis sur les différents niveaux vous proposent une offre street-food premium et variée.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-utensils"></i> Restaurant Panoramique 300 couverts</li>
+                    <li><i class="fas fa-burger"></i> 45 Food Courts internationaux</li>
+                    <li><i class="fas fa-leaf"></i> Options végétariennes & locales</li>
+                </ul>
+            </div>
+            <div class="split-image animate-split">
+                <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Restaurant Panoramique">
+            </div>
+        </div>
+
+        <div id="vip" class="split-section">
+            <div class="split-content animate-split">
+                <h3>Loges VIP & Espaces Presse</h3>
+                <p>Vivez l'événement dans des conditions optimales. Nos 120 loges privatives offrent un service sur mesure pour vos relations publiques, avec un accueil dédié et un service de restauration haut de gamme.</p>
+                <p>Les professionnels des médias disposent quant à eux d'une tribune presse ultra-connectée et de salles de conférence équipées des dernières technologies.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-crown"></i> 120 Loges privatives luxueuses</li>
+                    <li><i class="fas fa-concierge-bell"></i> Service conciergerie 24/7</li>
+                    <li><i class="fas fa-microphone"></i> Auditorium presse de 300 places</li>
+                    <li><i class="fas fa-wifi"></i> Connectivité Fibre Très Haut Débit</li>
+                </ul>
+            </div>
+            <div class="split-image animate-split">
+                <img src="https://images.unsplash.com/photo-1572205336214-1522f79c17df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Loge VIP Stade">
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerie Photos -->
+    <section id="galerie" class="gallery">
+        <h2 class="section-title">L'Expérience The Stadium</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item animate-gallery">
+                <img src="https://images.unsplash.com/photo-1489944440615-453fc2b6a9a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tribune">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item animate-gallery" style="transition-delay: 0.1s">
+                <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Concert nuit">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item animate-gallery" style="transition-delay: 0.2s">
+                <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pelouse">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item animate-gallery" style="transition-delay: 0.3s">
+                <img src="https://images.unsplash.com/photo-1600255821058-c4f89958d700?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Extérieur du stade">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Accès -->
+    <section id="contact">
+        <h2 class="section-title">Infos Pratiques & Contact</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>StadiumCompany</h3>
+                <p>The Stadium est situé au cœur de Paris, facilement accessible par les transports en commun et disposant de vastes parkings.</p>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>1 Avenue du Stade, 75000 Paris, France</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+33 (0)1 23 45 67 89</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>contact@stadiumcompany.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-train"></i>
+                    <span>Métro Ligne 1, RER A (Station: The Stadium)</span>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form onsubmit="event.preventDefault(); alert('Message envoyé avec succès !');">
+                    <div class="form-group">
+                        <input type="text" placeholder="Votre Nom & Prénom" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Votre Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; margin-bottom: 20px; outline: none;">
+                            <option value="">Sujet de votre demande</option>
+                            <option value="billetterie">Billetterie & Réservation</option>
+                            <option value="vip">Réservation Loge VIP</option>
+                            <option value="presse">Accréditation Presse</option>
+                            <option value="corporate">Événement Corporate</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Votre Message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Envoyer le message <i class="fas fa-paper-plane" style="margin-left: 8px;"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">SC<span>.</span> StadiumCompany</div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 StadiumCompany - The Stadium Paris. Tous droits réservés. <br> Projet fictif réalisé dans le cadre scolaire.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts pour les animations et fonctionnalités -->
+    <script>
+        // Menu Mobile
+        const mobileBtn = document.getElementById('mobile-btn');
+        const navLinks = document.getElementById('nav-links');
+        
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileBtn.querySelector('i').classList.remove('fa-times');
+                mobileBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // Navbar au scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.padding = "15px 50px";
+                navbar.style.boxShadow = "0 4px 20px rgba(0,0,0,0.15)";
+            } else {
+                navbar.style.padding = "20px 50px";
+                navbar.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
+            }
+        });
+
+        // Animation des compteurs (Hero Section)
+        const animateValue = (id, start, end, duration) => {
+            if (start === end) return;
+            const obj = document.getElementById(id);
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                // Ease out
+                const easeProgress = progress * (2 - progress);
+                obj.innerHTML = Math.floor(easeProgress * (end - start) + start).toLocaleString('fr-FR');
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        };
+
+        // Lancer les compteurs une fois au chargement
+        setTimeout(() => {
+            animateValue("counter-capacity", 0, 50000, 2000);
+            animateValue("counter-events", 0, 85, 2000);
+        }, 500);
+
+        // Observer pour les animations au scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const scrollObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // On peut choisir d'arrêter d'observer une fois animé
+                    // scrollObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Appliquer l'observer aux différents éléments
+        document.querySelectorAll('.animate-on-scroll, .animate-split, .animate-gallery').forEach(el => {
+            scrollObserver.observe(el);
+        });
+
+        // Active link on scroll
+        const sections = document.querySelectorAll('section');
+        const navItems = document.querySelectorAll('.nav-links a:not(.btn-ticket)');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').includes(current) && current !== '') {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
