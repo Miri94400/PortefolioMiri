@@ -39,32 +39,70 @@
 
     <section id="veille" class="section section-dark">
         <div class="container fade-in-section">
-            <h2 class="section-title">Deepfake & Ingénierie Sociale : Quand l'IA devient une arme de manipulation</h2>
+            <h2 class="section-title">La montée des Ransomwares as a Service (RaaS)</h2>
 
             <div class="veille-section">
                 <!-- 1. Introduction -->
                 <div class="veille-item veille-intro">
                     <div class="veille-content">
-                        <h3 style="color: var(--accent-color);">La menace au quotidien : L'ingénierie sociale</h3>
-                        <p>L'ingénierie sociale est aujourd'hui la principale porte d'entrée des cyberattaquants. Plutôt que de pirater des systèmes, ils manipulent directement les êtres humains pour obtenir des accès ou des informations sensibles.</p>
-                        <p>La majorité des cyberattaques utilisent l'ingénierie sociale comme vecteur. (SentinelOne)</p>
-                        <p>Ce qui rend cette menace encore plus dangereuse aujourd'hui c'est l'arrivée de l'intelligence artificielle, qui permet aux attaquants de créer des contenus faux de plus en plus convaincants.</p>
-                    </div>
-                    <div class="veille-image">
-                        <img src="cyber-crime.jpg" alt="Cyber crime et cybercriminalité">
+                        <h3 style="color: var(--accent-color);">1. Introduction</h3>
+                        <p>Le Ransomware as a Service (RaaS) est un modèle criminel où des cybercriminels développent un ransomware et le louent à des "affiliés" pour mener des attaques. Ce phénomène représente aujourd'hui l'une des menaces les plus sérieuses pour les entreprises et collectivités françaises.</p>
                     </div>
                 </div>
 
-                <!-- 2. Le Deepfake -->
+                <!-- 2. Comment ça fonctionne -->
                 <div class="veille-item">
                     <div class="veille-content">
-                        <h3 style="color: var(--accent-color);">Le Deepfake, l'arme ultime de la manipulation</h3>
-                        <p>Un deepfake c'est une vidéo ou un audio généré par intelligence artificielle qui imite parfaitement le visage ou la voix d'une vraie personne. Combiné à l'ingénierie sociale, il devient une arme redoutable car la victime ne peut plus faire confiance à ce qu'elle voit ou entend.</p>
-                        <p>L'exemple le plus marquant est la fraude de Hong Kong en février 2024 : un employé a transféré 25 millions de dollars après une fausse visioconférence où des deepfakes imitaient parfaitement le directeur financier et plusieurs cadres de l'entreprise. (SentinelOne)</p>
-                        <p>Le coût des attaques par deepfake a bondi de 2000% depuis 2023 avec l'arrivée de l'IA générative, et la technologie est aujourd'hui accessible à tous pour quelques euros seulement. (NinjaOne)</p>
+                        <h3 style="color: var(--accent-color);">2. Comment ça fonctionne</h3>
+                        <p>Les créateurs développent le ransomware et le proposent sur le dark web. Les affiliés, sans aucune compétence technique, paient un abonnement et reversent 20 à 30% de chaque rançon. En échange ils reçoivent l'outil clé en main avec tableau de bord et support.</p>
+                        <p>C'est comme une franchise criminelle : avant il fallait être expert pour créer un virus, aujourd'hui n'importe qui peut en louer un pour quelques centaines de dollars.</p>
                     </div>
                     <div class="veille-image">
-                        <img src="deepfake.jpg" alt="Exemple de Deepfake">
+                        <img src="raas.png" alt="Concept du RaaS">
+                    </div>
+                </div>
+
+                <!-- 3. Exemples d'attaques -->
+                <div class="veille-item">
+                    <div class="veille-content">
+                        <h3 style="color: var(--accent-color);">3. Exemples d'attaques</h3>
+                        <h4 style="margin-top: 10px;">WannaCry (2017)</h4>
+                        <p>En mai 2017, ce ransomware a infecté 230 000 ordinateurs dans 150 pays en exploitant une faille Windows. Des hôpitaux britanniques ont été paralysés et les pertes mondiales estimées à 4 milliards de dollars. L'attaque aurait pu être évitée si les systèmes avaient été mis à jour.</p>
+                        <div class="veille-image" style="margin-top: 15px; margin-bottom: 30px;">
+                            <img src="wannacry.jpg" alt="Écran WannaCry">
+                        </div>
+                        
+                        <h4>Hôpital de Corbeil-Essonnes (2022)</h4>
+                        <p>Dans la nuit du 20 au 21 août 2022, le groupe RaaS LockBit 3.0 a paralysé le Centre Hospitalier Sud Francilien. Une rançon de 10 millions de dollars a été réclamée. "Durant trois mois, nous avons été plongés dans le noir" résumait le directeur.</p>
+                        
+                        <h4 style="margin-top: 20px;">Ville de Quiberon (mai 2026)</h4>
+                        <p>Le 3 mai 2026, la municipalité de Quiberon a été victime du groupe RaaS Qilin, paralysant ses systèmes. Preuve que même les petites collectivités sont ciblées.</p>
+                        <div class="veille-image" style="margin-top: 15px;">
+                            <img src="qilin.webp" alt="Mairie de Quiberon - Qilin">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Comment se protéger -->
+                <div class="veille-item">
+                    <div class="veille-content">
+                        <h3 style="color: var(--accent-color);">4. Comment se protéger</h3>
+                        <ul style="list-style-type: disc; margin-left: 20px; line-height: 1.6;">
+                            <li>Mises à jour régulières des systèmes</li>
+                            <li>Sauvegardes hors ligne selon la règle du 3-2-1</li>
+                            <li>Segmentation réseau pour limiter la propagation</li>
+                            <li>Formation des utilisateurs au phishing</li>
+                            <li>Supervision réseau pour détecter les anomalies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 5. Sources et outils -->
+                <div class="veille-item">
+                    <div class="veille-content">
+                        <h3 style="color: var(--accent-color);">5. Sources et outils</h3>
+                        <p><strong>Sources :</strong> IT-Connect · CERT-FR · ANSSI · Kaspersky · Le Parisien</p>
+                        <p><strong>Outils :</strong> Google Alertes · Newsletter IT-Connect, Linkedin</p>
                     </div>
                 </div>
             </div>
