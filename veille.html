@@ -46,7 +46,7 @@
                 <div class="veille-item veille-intro">
                     <div class="veille-content">
                         <h3 style="color: var(--accent-color);">1. Introduction</h3>
-                        <p>Le Ransomware as a Service (RaaS) est un modèle criminel où des cybercriminels développent un ransomware et le louent à des "affiliés" pour mener des attaques. Ce phénomène représente aujourd'hui l'une des menaces les plus sérieuses pour les entreprises et collectivités françaises.</p>
+                        <p>Le Ransomware as a Service (RaaS) est un modèle criminel où des cybercriminels développent un ransomware et le louent à d'autres personnes appelées "affiliés" pour mener des attaques. Ce phénomène est en pleine expansion et représente aujourd'hui l'une des menaces les plus sérieuses pour les entreprises et les collectivités à travers le monde. En France, les attaques se multiplient chaque année contre des hôpitaux, des mairies et des entreprises de toutes tailles.</p>
                     </div>
                 </div>
 
@@ -54,11 +54,11 @@
                 <div class="veille-item">
                     <div class="veille-content">
                         <h3 style="color: var(--accent-color);">2. Comment ça fonctionne</h3>
-                        <p>Les créateurs développent le ransomware et le proposent sur le dark web. Les affiliés, sans aucune compétence technique, paient un abonnement et reversent 20 à 30% de chaque rançon. En échange ils reçoivent l'outil clé en main avec tableau de bord et support.</p>
-                        <p>C'est comme une franchise criminelle : avant il fallait être expert pour créer un virus, aujourd'hui n'importe qui peut en louer un pour quelques centaines de dollars.</p>
+                        <p>Le RaaS fonctionne exactement comme un service commercial, à la différence que le produit est un logiciel malveillant. Les créateurs développent le ransomware, mettent en place l'infrastructure de paiement et proposent leur service sur le dark web. Les affiliés, qui n'ont aucune compétence technique particulière, paient un abonnement ou reversent une commission de 20 à 30% sur chaque rançon encaissée. En échange ils reçoivent le ransomware clé en main, un tableau de bord pour suivre leurs attaques et même un service support.</p>
+                        <p>C'est comme une franchise : les créateurs fournissent la recette et les outils, les affiliés s'occupent du terrain. Avant il fallait être un expert pour créer un virus — aujourd'hui n'importe qui peut louer un ransomware pour quelques centaines de dollars et attaquer une entreprise sans aucune compétence technique.</p>
                     </div>
-                    <div class="veille-image">
-                        <img src="raas.png" alt="Concept du RaaS">
+                    <div class="veille-image" style="height: auto;">
+                        <img src="raas.png" alt="Concept du RaaS" style="object-fit: contain;">
                     </div>
                 </div>
 
@@ -67,19 +67,22 @@
                     <div class="veille-content">
                         <h3 style="color: var(--accent-color);">3. Exemples d'attaques</h3>
                         <h4 style="margin-top: 10px;">WannaCry (2017)</h4>
-                        <p>En mai 2017, ce ransomware a infecté 230 000 ordinateurs dans 150 pays en exploitant une faille Windows. Des hôpitaux britanniques ont été paralysés et les pertes mondiales estimées à 4 milliards de dollars. L'attaque aurait pu être évitée si les systèmes avaient été mis à jour.</p>
+                        <p>WannaCry est un crypto-ransomware qui a fait figure d'épidémie mondiale en mai 2017. Il ciblait les ordinateurs sous Microsoft Windows en exploitant une faille baptisée EternalBlue, initialement développée par l'Agence de sécurité nationale américaine (NSA) et rendue publique par des hackers. En quelques heures, plus de 230 000 ordinateurs dans 150 pays ont été infectés. Des milliers d'hôpitaux britanniques ont été paralysés, des ambulances détournées, et les pertes mondiales sont estimées à 4 milliards de dollars. Une rançon en bitcoins était exigée — d'abord 300 dollars, puis 600 dollars si la victime ne payait pas dans les trois jours.</p>
                         <div class="veille-image split-image" style="margin-top: 15px; margin-bottom: 30px; height: auto; background: transparent; border: none; box-shadow: none;">
                             <img src="wannacry.jpg" alt="Écran WannaCry" style="object-fit: contain; width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
                             <img src="wannacry_2.jpg" alt="Écran WannaCry Crypté" style="object-fit: contain; width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
                         </div>
                         
                         <h4>Hôpital de Corbeil-Essonnes (2022)</h4>
-                        <p>Dans la nuit du 20 au 21 août 2022, le groupe RaaS LockBit 3.0 a paralysé le Centre Hospitalier Sud Francilien. Une rançon de 10 millions de dollars a été réclamée. "Durant trois mois, nous avons été plongés dans le noir" résumait le directeur.</p>
+                        <p>Dans la nuit du 20 au 21 août 2022, le Centre Hospitalier Sud Francilien a été ciblé par le groupe RaaS russophone LockBit 3.0. Tous les logiciels et systèmes d'information liés aux admissions des patients se sont retrouvés à l'arrêt. Une rançon de 10 millions de dollars a été réclamée. "Durant trois mois, nous avons été plongés dans le noir", résumait un an plus tard le directeur de l'hôpital. Cet exemple illustre parfaitement le fonctionnement du RaaS — LockBit 3.0 loue son ransomware à des affiliés qui mènent les attaques de manière autonome.</p>
+                        <div class="veille-image" style="margin-top: 15px; margin-bottom: 30px; height: auto; background: transparent; border: none; box-shadow: none;">
+                            <img src="hopital_corbeil.jpg" alt="Hôpital de Corbeil-Essonnes" style="object-fit: contain; width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
+                        </div>
                         
                         <h4 style="margin-top: 20px;">Ville de Quiberon (mai 2026)</h4>
-                        <p>Le 3 mai 2026, la municipalité de Quiberon a été victime du groupe RaaS Qilin, paralysant ses systèmes. Preuve que même les petites collectivités sont ciblées.</p>
-                        <div class="veille-image" style="margin-top: 15px;">
-                            <img src="qilin.webp" alt="Mairie de Quiberon - Qilin">
+                        <p>La municipalité bretonne de Quiberon a été victime du ransomware Qilin le 3 mai 2026, paralysant ses systèmes informatiques. Qilin est un groupe RaaS actif depuis 2022 qui loue son ransomware à des affiliés dans le monde entier. Cet exemple récent montre que même les petites collectivités locales sont des cibles privilégiées.</p>
+                        <div class="veille-image" style="margin-top: 15px; height: auto; background: transparent; border: none; box-shadow: none;">
+                            <img src="qilin.webp" alt="Mairie de Quiberon - Qilin" style="object-fit: contain; width: 100%; border-radius: 8px; border: 1px solid var(--border-color);">
                         </div>
                     </div>
                 </div>
@@ -88,12 +91,14 @@
                 <div class="veille-item">
                     <div class="veille-content">
                         <h3 style="color: var(--accent-color);">4. Comment se protéger</h3>
+                        <p style="margin-bottom: 15px;">Face à la menace RaaS, plusieurs bonnes pratiques permettent de réduire les risques :</p>
                         <ul style="list-style-type: disc; margin-left: 20px; line-height: 1.6;">
-                            <li>Mises à jour régulières des systèmes</li>
-                            <li>Sauvegardes hors ligne selon la règle du 3-2-1</li>
-                            <li>Segmentation réseau pour limiter la propagation</li>
-                            <li>Formation des utilisateurs au phishing</li>
-                            <li>Supervision réseau pour détecter les anomalies</li>
+                            <li>Mises à jour régulières des systèmes — WannaCry aurait pu être évité si les utilisateurs avaient installé le correctif Microsoft disponible deux mois avant l'attaque</li>
+                            <li>Sauvegardes régulières hors ligne selon la règle du 3-2-1 (3 copies, 2 supports différents, 1 hors site)</li>
+                            <li>Segmentation réseau pour limiter la propagation d'une infection</li>
+                            <li>Supervision du réseau pour détecter les comportements anormaux rapidement</li>
+                            <li>Formation des utilisateurs au phishing, principal vecteur d'infection</li>
+                            <li>Firewall et règles de filtrage pour bloquer les communications suspectes</li>
                         </ul>
                     </div>
                 </div>
